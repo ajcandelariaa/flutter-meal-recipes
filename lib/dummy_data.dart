@@ -56,7 +56,7 @@ const dummyCategories = [
 ];
 
 
-const dummyDeals = [
+const dummyMeals = [
   const Meal(
     id: 'm1',
     categories: [

@@ -20,34 +20,40 @@ class MealItem extends StatelessWidget {
   });
 
   String get complexityText {
-    switch(complexity){
+    switch (complexity) {
       case Complexity.Simple:
         return 'Simple';
       case Complexity.Challenging:
         return 'Challenging';
       case Complexity.Hard:
         return 'Hard';
-      default: 
+      default:
         return 'Unknown';
     }
   }
 
   String get affordabilityText {
-    switch(affordability){
+    switch (affordability) {
       case Affordability.Affordable:
         return 'Affordable';
       case Affordability.Pricey:
         return 'Pricey';
       case Affordability.Luxurious:
         return 'Expensive';
-      default: 
+      default:
         return 'Unknown';
     }
   }
-  
 
   void selectMeal(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(MealDetailScreen.routeName, arguments: id);
+    Navigator.of(ctx).pushNamed(
+      MealDetailScreen.routeName,
+      arguments: id,
+    ).then((result) => {
+      if(result != null){
+        // removeItem(result)
+      }
+    });
   }
 
   @override
